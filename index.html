@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <body>
-    Ding Don! Looks like some mail has arrived!
+    <p onclick="document.getElementById('ding').play()">
+        Ding Don! Looks like some mail has arrived!
+    </p>
 
-    <audio autoplay>
+    <audio id="ding">
         <source src="dingdong.mp3" type="audio/mpeg">
     </audio>
 </body>
