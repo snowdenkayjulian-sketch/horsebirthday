@@ -1,25 +1,26 @@
 <!DOCTYPE html>
 <html>
-<body style="display:flex;justify-content:center;align-items:center;height:100vh;margin:0;">
+<body style="display:flex;justify-content:center;align-items:center;height:100vh;margin:0;font-family:sans-serif;">
 
 <div style="text-align:center;">
 
-<p id="msg">Ding Don! Looks like some mail has arrived!</p>
+<button id="openBtn" style="font-size:24px;padding:20px 40px;">
+📬 Click to open your mail
+</button>
+
+<p id="message" style="display:none;font-size:28px;">
+Ding Don! Looks like some mail has arrived!
+</p>
 
 <audio id="ding">
     <source src="dingdong.mp3" type="audio/mpeg">
 </audio>
 
 <script>
-window.onload = function() {
-    document.getElementById("ding").play().catch(() => {
-        document.getElementById("msg").innerHTML =
-            "🔔 Click anywhere to hear the ding dong!<br><br>Ding Don! Looks like some mail has arrived!";
-    });
-};
-
-document.addEventListener("click", function() {
+document.getElementById("openBtn").addEventListener("click", function() {
     document.getElementById("ding").play();
+    document.getElementById("openBtn").style.display = "none";
+    document.getElementById("message").style.display = "block";
 });
 </script>
 
